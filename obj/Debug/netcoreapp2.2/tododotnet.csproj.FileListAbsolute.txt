@@ -1,0 +1,14 @@
+/home/akash/Desktop/tododotnet/bin/Debug/netcoreapp2.2/tododotnet.deps.json
+/home/akash/Desktop/tododotnet/bin/Debug/netcoreapp2.2/tododotnet.runtimeconfig.json
+/home/akash/Desktop/tododotnet/bin/Debug/netcoreapp2.2/tododotnet.runtimeconfig.dev.json
+/home/akash/Desktop/tododotnet/bin/Debug/netcoreapp2.2/tododotnet.dll
+/home/akash/Desktop/tododotnet/bin/Debug/netcoreapp2.2/tododotnet.pdb
+/home/akash/Desktop/tododotnet/obj/Debug/netcoreapp2.2/tododotnet.csprojAssemblyReference.cache
+/home/akash/Desktop/tododotnet/obj/Debug/netcoreapp2.2/tododotnet.csproj.CoreCompileInputs.cache
+/home/akash/Desktop/tododotnet/obj/Debug/netcoreapp2.2/tododotnet.RazorAssemblyInfo.cache
+/home/akash/Desktop/tododotnet/obj/Debug/netcoreapp2.2/tododotnet.RazorAssemblyInfo.cs
+/home/akash/Desktop/tododotnet/obj/Debug/netcoreapp2.2/tododotnet.AssemblyInfoInputs.cache
+/home/akash/Desktop/tododotnet/obj/Debug/netcoreapp2.2/tododotnet.AssemblyInfo.cs
+/home/akash/Desktop/tododotnet/obj/Debug/netcoreapp2.2/tododotnet.RazorTargetAssemblyInfo.cache
+/home/akash/Desktop/tododotnet/obj/Debug/netcoreapp2.2/tododotnet.dll
+/home/akash/Desktop/tododotnet/obj/Debug/netcoreapp2.2/tododotnet.pdb
