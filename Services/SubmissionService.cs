@@ -5,33 +5,33 @@ using tododotnet.Models;
 
 namespace tododotnet.Services
 {
-    public class SubmissionService
+    public class TodoService
     {
-        private readonly IMongoCollection<Submission> _submissions;
+        private readonly IMongoCollection<Todo> _submissions;
 
-        public SubmissionService(IDatabaseSettings settings) {
+        public TodoService(IDatabaseSettings settings) {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-            _submissions = database.GetCollection<Submission>("Submissions");
+            _submissions = database.GetCollection<Todo>("Submissions");
         }
 
-        public Submission Create(Submission submission) {
+        public Todo Create(Todo submission) {
             Console.WriteLine(submission);
             _submissions.InsertOne(submission);
 
             return submission;
         }
 
-        public IList<Submission> Read() =>
+        public IList<Todo> Read() =>
             _submissions.Find(sub => true).ToList();
 
-        public Submission Find(string id) =>
+        public Todo Find(string id) =>
             _submissions.Find(sub=>sub.Id == id).SingleOrDefault();
 
-        public IList<Submission> FindByUsername(string username) =>
+        public IList<Todo> FindByUsername(string username) =>
             _submissions.Find(sub => sub.UserName == username).ToList();
 
-        public void Update(Submission submission) =>
+        public void Update(Todo submission) =>
             _submissions.ReplaceOne(sub => sub.Id == submission.Id, submission);
 
         public void Delete(string id) =>

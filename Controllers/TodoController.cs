@@ -11,17 +11,17 @@ namespace tododotnet.Controllers
 {
     [Produces("application/json")]
     [Route("api/submission")]
-    public class SubmissionController
+    public class TodoController
     {
-        private readonly SubmissionService _subSvc;
-        public SubmissionController(SubmissionService submissionService)
+        private readonly TodoService _subSvc;
+        public TodoController(TodoService submissionService)
         {
             _subSvc = submissionService;
         }
 
         [HttpPost("create")]
-        public ActionResult<Submission> Create([FromBody] Submission submission) {
-            Submission newSubmission = new Submission();
+        public ActionResult<Todo> Create([FromBody] Todo submission) {
+            Todo newSubmission = new Todo();
             newSubmission.Created = DateTime.Now;
             newSubmission.LastUpdated = DateTime.Now;
             newSubmission.UserId = submission.UserId;
@@ -33,8 +33,8 @@ namespace tododotnet.Controllers
         }
 
         [HttpPut("markComplete/{id}")]
-        public Submission MarkComplete(string id) {
-            Submission todo = _subSvc.Find(id);
+        public Todo MarkComplete(string id) {
+            Todo todo = _subSvc.Find(id);
             todo.Complete = true;
             todo.LastUpdated = DateTime.Now;
             _subSvc.Update(todo);
