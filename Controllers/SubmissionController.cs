@@ -32,18 +32,6 @@ namespace tododotnet.Controllers
             return newSubmission;
         }
 
-        [HttpGet("allTodos")]
-        public IEnumerable<Submission> GetAllTodos() {
-            IEnumerable<Submission> todos =  _subSvc.Read();
-            return todos;
-        }
-
-        [HttpGet("getTodoByUsername/{username}")]
-        public IEnumerable<Submission> GetTodoByUsername(string username) {
-            IEnumerable<Submission> todos = _subSvc.FindByUsername(username);
-            return todos;
-        }
-
         [HttpPut("markComplete/{id}")]
         public Submission MarkComplete(string id) {
             Submission todo = _subSvc.Find(id);
