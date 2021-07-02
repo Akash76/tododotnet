@@ -7,7 +7,7 @@ using tododotnet.Services;
 namespace tododotnet.Controllers
 {
     [Produces("application/json")]
-    [Route("api/submission")]
+    [Route("api/todo")]
     public class TodoGetController
     {
         private readonly TodoService _todoService;
@@ -25,12 +25,6 @@ namespace tododotnet.Controllers
         [HttpGet("allTodos")]
         public IEnumerable<Todo> GetAllTodos() {
             IEnumerable<Todo> todos =  _todoService.Read();
-            return todos;
-        }
-
-        [HttpGet("getTodoByUsername/{username}")]
-        public IEnumerable<Todo> GetTodoByUsername(string username) {
-            IEnumerable<Todo> todos = _todoService.FindByUsername(username);
             return todos;
         }
     }

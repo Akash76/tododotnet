@@ -28,9 +28,6 @@ namespace tododotnet.Services
         public Todo Find(string id) =>
             _submissions.Find(sub=>sub.Id == id).SingleOrDefault();
 
-        public IList<Todo> FindByUsername(string username) =>
-            _submissions.Find(sub => sub.UserName == username).ToList();
-
         public void Update(Todo submission) =>
             _submissions.ReplaceOne(sub => sub.Id == submission.Id, submission);
 

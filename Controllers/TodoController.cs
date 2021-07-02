@@ -10,7 +10,7 @@ using tododotnet.Services;
 namespace tododotnet.Controllers
 {
     [Produces("application/json")]
-    [Route("api/submission")]
+    [Route("api/todo")]
     public class TodoController
     {
         private readonly TodoService _subSvc;
@@ -24,8 +24,6 @@ namespace tododotnet.Controllers
             Todo newSubmission = new Todo();
             newSubmission.Created = DateTime.Now;
             newSubmission.LastUpdated = DateTime.Now;
-            newSubmission.UserId = submission.UserId;
-            newSubmission.UserName = submission.UserName;
             newSubmission.Content = submission.Content;
             newSubmission.Complete = false;
             _subSvc.Create(newSubmission);
@@ -35,7 +33,7 @@ namespace tododotnet.Controllers
         [HttpPut("markComplete/{id}")]
         public Todo MarkComplete(string id) {
             Todo todo = _subSvc.Find(id);
-            todo.Complete = true;
+            todo.Complete = !todo.Complete;
             todo.LastUpdated = DateTime.Now;
             _subSvc.Update(todo);
 
